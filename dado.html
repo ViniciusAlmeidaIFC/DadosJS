@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Jogo dos dado</title>
+ <script>
+  var dado;
+  var dado1;
+  var dado2;
+  var dado3;
+  var vencedorCpu = "Cpu Venceu";
+  var vencedorPlayer = "Player Venceu";
+  var somaPlayer;
+  var somaCPU;
+  function iniciar()
+  {
+   var button = document.getElementById( "rolar" );
+   button.addEventListener( "click", rolar, false );
+   dado = document.getElementById( "dado" );
+   dado1 = document.getElementById( "dado1" );
+   dado2 = document.getElementById( "dado2" );
+   dado3 = document.getElementById( "dado3" );
+   somaCPU = document.getElementById( "somac" );
+   somaPlayer = document.getElementById( "somap" );
+  }
+
+  function rolar()
+  {
+   setImage( dado );
+   setImage1( dado1 );
+   setImage2 ( dado2 );
+   setImage3 ( dado3);
+  }
+
+  function setImage( dado )
+  {
+   var valor = Math.floor( 1 + Math.random() * 6 );
+   dado.setAttribute( "src", "face" + valor + ".png" );
+   somaPlayer = somaPlayer + valor;
+  } 
+  function setImage1( dado1 )
+  {
+   var valor = Math.floor( 1 + Math.random() * 6 );
+   dado1.setAttribute( "src", "face" + valor + ".png" );
+   somaPlayer = somaPlayer + valor
+  } 
+  function setImage2( dado2 )
+  {
+   var valor = Math.floor( 1 + Math.random() * 6 );
+   dado2.setAttribute( "src", "face" + valor + ".png" );
+   somaCPU = somaPlayer + valor
+  } 
+  function setImage3( dado3 )
+  {
+   var valor = Math.floor( 1 + Math.random() * 6 );
+   dado3.setAttribute( "src", "face" + valor + ".png" );
+   somaCPU = somaPlayer + valor
+  } 
+  
+  window.addEventListener("load", iniciar, false);
+  </script>
+
+ </head>
+ <body>
+ <form action = "#">
+  <input id = "rolar" type = "button" value = "Jogar">
+   
+ </form>
+ <img id = "dado" > 
+ <img id = "dado1">
+ <img id = "dado2">
+ <img id = "dado3" src = "banner.gif">
+ </body>
+</html>
